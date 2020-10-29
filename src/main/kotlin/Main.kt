@@ -5,7 +5,7 @@ fun main() {
     val russianNationalLanguage = Languages.RUSSIAN
     println("National language of ${russianNationalLanguage.country} is $russianNationalLanguage")
 
-    /* также можно получить данные константы через имя константы или через порядковый номер констаны в списке enum
+    /* также можно получить данные константы через имя константы или через порядковый номер константы в списке enum
     класса
 */
     // получение порядкового номера константы в списке enum класса через ordinal
@@ -31,11 +31,24 @@ fun main() {
     println("National language of ${Languages.ENGLISH.country} is ${english[0].toUpperCase()+english.substring(1)}")
 
     /*
-    Ниже пример иллюстрирующий работу переопределенной функции Enum класса имплементирующего интерфейс
+    Ниже пример иллюстрирующий работу переопределенных функций Enum класса имплементирующего интерфейсы
      */
 
     LanguagesImpl.ENGLISH.sayHello()
+    LanguagesImpl.ENGLISH.sayBye()
     LanguagesImpl.ITALIAN.sayHello()
+    LanguagesImpl.ITALIAN.sayBye()
     LanguagesImpl.RUSSIAN.sayHello()
+    LanguagesImpl.RUSSIAN.sayBye()
 
+    /*
+    Ниже пример иллюстрирующий работу переопределенных функций Enum класса, где константы созданы как анонимный класс
+     */
+
+    LanguagesAsAnonymousClasses.ENGLISH.sayHello()
+    LanguagesAsAnonymousClasses.ENGLISH.sayBye()
+    LanguagesAsAnonymousClasses.ITALIAN.sayHello()
+    LanguagesAsAnonymousClasses.ITALIAN.sayBye()
+    LanguagesAsAnonymousClasses.RUSSIAN.sayHello()
+    LanguagesAsAnonymousClasses.RUSSIAN.sayBye()
 }

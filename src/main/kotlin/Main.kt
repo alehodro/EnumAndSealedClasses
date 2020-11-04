@@ -11,16 +11,16 @@ fun main() {
     // получение порядкового номера константы в списке enum класса через ordinal
     println(
         "${Languages.ITALIAN.ordinal} is int representing ordinal number of ITALIAN constant in emum class list " +
-                "returned from enum class instance"
+            "returned from enum class instance"
     )
     //получение константы по порядковому номеру через функцию values()[int]
-    println("${Languages.values()[2]} is enum instance created from int with it's ordinal number")
+    println("${Languages.values()[2]} is enum instance created from int 2 that is it's ordinal number")
     // получение константы по строке с ее именем через функцию valueOf()
     println("${Languages.valueOf("RUSSIAN")} is enum instance created from string with it's name.")
     // получение строки с именем константы по самой константе через name
     println(
         "${Languages.RUSSIAN.name} is a string representing name of RUSSIAN constant returned from enum class " +
-                "instance "
+            "instance "
     )
 
     /*
@@ -28,7 +28,7 @@ fun main() {
     текст. Так как теперь выводится тип String, можно его правильно отформатировать
      */
     val english = Languages.ENGLISH.name.toLowerCase()
-    println("National language of ${Languages.ENGLISH.country} is ${english[0].toUpperCase()+english.substring(1)}")
+    println("National language of ${Languages.ENGLISH.country} is ${english[0].toUpperCase() + english.substring(1)}")
 
     /*
     Ниже пример иллюстрирующий работу переопределенных функций Enum класса имплементирующего интерфейсы
@@ -51,4 +51,29 @@ fun main() {
     LanguagesAsAnonymousClasses.ITALIAN.sayBye()
     LanguagesAsAnonymousClasses.RUSSIAN.sayHello()
     LanguagesAsAnonymousClasses.RUSSIAN.sayBye()
+
+/*
+Можно прогонять все константы Enum класса в цикле, через функцию values()
+ */
+
+    for (i in Languages.values()) {
+        val language = i.name.toLowerCase()
+        println("National language of ${i.country} is ${language[0].toUpperCase() + language.substring(1)}")
+    }
+
+    /*
+Тестим вызова статичной функции Enum класса
+     */
+    println(LanguagesWithCompanionObject.getCountryByLanguage("russian"))
+
+    val shapeCircle = Circle(5)
+    val evaluater = Evaluater(shapeCircle)
+    evaluater.eval()
+    println(shapeCircle.area)
+    shapeCircle.sayHello()
+    val test = Test(5.5)
+    val evaluater2 =Evaluater(test)
+    evaluater2.eval()
+
+
 }

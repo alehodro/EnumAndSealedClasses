@@ -71,9 +71,5 @@ fun main() {
     evaluater.eval()
     println(shapeCircle.area)
     shapeCircle.sayHello()
-    val test = Test(5.5)
-    val evaluater2 =Evaluater(test)
-    evaluater2.eval()
-
 
 }
